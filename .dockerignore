@@ -1,0 +1,9 @@
+.git
+.github
+.devcontainer
+terraform/
+k8s/
+**/__pycache__
+*.pyc
+.env
+README.md
