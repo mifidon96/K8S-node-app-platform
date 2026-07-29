@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: dev
+resources:
+  - namespace.yaml
+  - ../../base
+labels:
+  - pairs:
+      environment: dev
+    includeSelectors: true
+replicas:
+  - name: node-app
+    count: 1
+patches:
+  - path: patch-app.yaml
+  - path: patch-ingress.yaml
